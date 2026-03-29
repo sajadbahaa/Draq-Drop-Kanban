@@ -1,0 +1,132 @@
+/* Global settings */
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root
+{
+--d-gap:20px;
+--gap10:10px;
+}
+ul 
+{
+list-style: none;
+}
+
+.flex 
+{
+display: flex;
+ gap: var(--d-gap);
+}
+body
+{
+min-height:100vh;
+justify-content: center;
+align-items: center;
+flex-direction: column;  
+font-size: 16px;
+}
+
+/* end Global settings */
+
+/* header */
+.Kanban-header 
+{
+margin-top: 20px;
+}
+.Kanban-header h1
+{
+    font-size: clamp(1rem, 5vw, 3rem);
+}
+/* end header */
+
+/* Kanban  */
+.Kanban
+{
+flex-direction: row;
+justify-content: space-evenly;
+flex-wrap: wrap;
+    width: calc(100% - 20px);
+    /* padding: 20px 10px; */
+    margin:20px;
+}
+/* end */
+
+/* kanban-column */
+.kanban-column
+{
+flex: 1 1 250px;
+/* width: 230px; */
+    background: #50494f;
+    min-height: 400px;
+padding:10px;
+max-width: 300px;
+gap: var(--d-gap);
+    border: none;
+    border-radius: 10px;
+/* overflow: hidden; */
+}
+/* end */
+
+/* kanban-column-title */
+.kanban-column .kanban-column-title
+{
+margin-bottom: 10px;
+text-align: center;
+    line-height: 1.2;
+    font-size: clamp(1rem, 2.7vw, 2.5rem);
+    color: #fff;
+
+}
+/* end */
+
+
+.kanban-list
+{
+flex-direction: column;
+align-items: flex-start;
+    
+gap: var(--gap10);
+position: relative;
+    /* margin: 10px; */
+    background: rgb(4, 5, 6);
+    border: none;
+    border-radius: 5px;
+        padding-top: 35px;
+    padding-bottom: 35px;
+/* margin: 10px; */
+/* height: auto;; */
+min-height: 50px;
+}
+
+.kanban-task
+{
+    padding: 10px;
+    background: #fac32d;
+    width: calc(100% - 20px);
+    overflow-wrap: break-word;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: grab;
+    margin: 10px 10px;
+    color: #000000;
+        border: none;
+    border-radius: 10px;
+}
+
+
+.kanban-task:active
+{
+cursor: grabbing;
+transform: scale(1.05);
+box-shadow: 0 0px 4px  4px rgba(0, 0, 0, 0.5);
+}
+
+.kanban-column.over
+{
+  background-color: rgba(66, 148, 235, 0.737);
+    transition: background 0.2s;
+}
